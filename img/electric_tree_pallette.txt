@@ -1,0 +1,39 @@
+/* CSS HEX */
+--chino: #d2c8ae;
+--mineral-green: #384f48;
+--laurel: #7a927c;
+--crocodile: #7e715b;
+--summer-green: #91baa5;
+--thatch-green: #333714;
+--bunker: #0f1317;
+--bali-hai: #88a8ae;
+--cutty-sark: #50787d;
+--matrix: #ac5a63;
+
+
+/* SCSS HEX */
+$chino: #d2c8ae;
+$mineral-green: #384f48;
+$laurel: #7a927c;
+$crocodile: #7e715b;
+$summer-green: #91baa5;
+$thatch-green: #333714;
+$bunker: #0f1317;
+$bali-hai: #88a8ae;
+$cutty-sark: #50787d;
+$matrix: #ac5a63;
+
+
+/* SCSS RGB */
+--chino: rgba(210,200,174,1);
+--mineral-green: rgba(56,79,72,1);
+--laurel: rgba(122,146,124,1);
+--crocodile: rgba(126,113,91,1);
+--summer-green: rgba(145,186,165,1);
+--thatch-green: rgba(51,55,20,1);
+--bunker: rgba(15,19,23,1);
+--bali-hai: rgba(136,168,174,1);
+--cutty-sark: rgba(80,120,125,1);
+--matrix: rgba(172,90,99,1);
+
+
