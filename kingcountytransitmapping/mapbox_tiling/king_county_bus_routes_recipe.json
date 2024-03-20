@@ -1,0 +1,11 @@
+{
+    "version": 1,
+    "layers": {
+      "king_county_bus_routes": {
+        "source": "mapbox://tileset-source/bikebusroutescout/king_county_bus_routes",
+        "minzoom": 5,
+        "maxzoom": 16
+      }
+    }
+  }
+  
