@@ -3,7 +3,7 @@ from folium import plugins
 
 def create_kc_map(map_name='base_map', location=[47.608013, -122.335167],
                     zoom_start=12, max_zoom=25, min_zoom=9,
-                    min_lat=47.0, max_lat=48.0, min_lon=-123.0, max_lon=-121.0
+                    min_lat=47.0, max_lat=48.0, min_lon=-123.0, max_lon=-121.0,
                     tiles='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
                     attr='Esri', overlay=False, control=True):
     m = folium.Map(location=location, zoom_start=zoom_start, max_zoom=max_zoom, min_zoom=min_zoom,
