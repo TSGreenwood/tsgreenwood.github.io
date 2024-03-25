@@ -1,15 +1,32 @@
 import folium
 from folium import plugins
 
-def create_kc_map(map_name='base_map', location=[47.608013, -122.335167],
-                  zoom_start=12, max_zoom=25, min_zoom=9,
-                  min_lat=47.0, max_lat=48.0, min_lon=-123.0, max_lon=-121.0,
-                  tiles='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-                  attr='Esri', overlay=False, control=True):
-    m = folium.Map(location=location, zoom_start=zoom_start, min_zoom=min_zoom, max_zoom=max_zoom,
-                   max_bounds=[[min_lat, min_lon], [max_lat, max_lon]], control_scale=True)
-    base_layer = folium.TileLayer(tiles=tiles, attr=attr, name=map_name, overlay=overlay, control=control)
-    base_layer.add_to(m)
+def create_anchored_kc_base_map(default_location=[47.608013, -122.335167],
+                                default_zoom_start=12):
+    m = folium.Map(location=default_location, zoom_start=default_zoom_start,
+                   tiles='https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
+                   attr='Esri', overlay=False, control_scale=True, min_zoom=9)
+
+    # Define your boundary for King County or the specific area of interest
+    boundary = {
+        'north': 48,
+        'south': 47.4,
+        'east': -121.8,
+        'west': -122.7
+    }
+
+    # Apply the max bounds to the map
+    #m.fit_bounds([
+     #   [boundary['south'], boundary['west']],
+     #   [boundary['north'], boundary['east']]
+   # ])
+
+    # Ensure user cannot pan outside of the given boundary
+    m.options['maxBounds'] = [
+        [boundary['south'], boundary['west']],
+        [boundary['north'], boundary['east']]
+    ]
+
     return m
 
 
