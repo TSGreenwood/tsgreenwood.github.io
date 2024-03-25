@@ -7,7 +7,7 @@ def create_kc_map(map_name='base_map', location=[47.608013, -122.335167],
                   tiles='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
                   attr='Esri', overlay=False, control=True):
     m = folium.Map(location=location, zoom_start=zoom_start, min_zoom=min_zoom, max_zoom=max_zoom,
-                   min_lat=min_lat, max_lat=max_lat, min_lon=min_lon, max_lon=max_lon, max_bounds=True, control_scale=True)
+                   max_bounds=[[min_lat, min_lon], [max_lat, max_lon]], control_scale=True)
     base_layer = folium.TileLayer(tiles=tiles, attr=attr, name=map_name, overlay=overlay, control=control)
     base_layer.add_to(m)
     return m
