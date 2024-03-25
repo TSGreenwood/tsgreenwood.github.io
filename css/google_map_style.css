@@ -1,0 +1,11 @@
+#googlemap {
+    /* Set width to 100% of container for responsiveness */
+    width: 100%; 
+    /* Set height using the golden ratio, adjust as necessary based on your site's design */
+    height: calc(100vw * 0.618); 
+    /* Ensure the map does not exceed a certain size */
+    max-width: 600px; /* Adjust based on your design preferences */
+    max-height: calc(600px * 0.618);
+    margin: auto; /* Center the map on the page */
+  }
+  
