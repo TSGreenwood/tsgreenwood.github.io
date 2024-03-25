@@ -1,3 +1,6 @@
+Import folium
+from folium import plugins
+
 def create_kc_map(map_name='base_map', location=[47.608013, -122.335167],
                     zoom_start=12, max_zoom=25,
                     tiles='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
@@ -23,7 +26,6 @@ def add_local_routes(m):
     ).add_to(m)
 
 # Add legend for route types
-
 def add_route_legend(map_object):
   legend_html = '''
   <div style="position: fixed;
@@ -39,7 +41,6 @@ def add_route_legend(map_object):
   folium.Element(legend.render()).add_to(map_object)
 
   from folium.plugins import MarkerCluster
-
 def mark_bus_stops(map_object, bus_stops_gdf):
   for _, row in bus_stops_gdf.iterrows():
     folium.Marker(
@@ -48,13 +49,11 @@ def mark_bus_stops(map_object, bus_stops_gdf):
     ).add_to(map_object)
 
 from folium.plugins import HeatMap
-
 def create_heatmap_bus_stops(map_object, bus_stops_gdf):
   heatmap_data = bus_stops_gdf[['YCOORD', 'XCOORD']].values.tolist()
   HeatMap(heatmap_data).add_to(map_object)
 
-  import folium
-
+ 
 def display_zipcode_overlay(map_object, zip_codes_gdf, attribute='TOTAL_BUS_STOPS'):
 
     # Create a tooltip that dynamically fetches the ZIPCODE and the specified attribute
