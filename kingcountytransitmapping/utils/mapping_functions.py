@@ -1,11 +1,10 @@
-Import folium
+import folium
 from folium import plugins
 
 def create_kc_map(map_name='base_map', location=[47.608013, -122.335167],
                     zoom_start=12, max_zoom=25,
                     tiles='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
                     attr='Esri', overlay=False, control=True):
-    Import folium
     m = folium.Map(location=location, zoom_start=zoom_start, max_zoom=max_zoom, control_scale=True)
     base_layer = folium.TileLayer(tiles=tiles, attr=attr, name=map_name, overlay=overlay, control=control)
     base_layer.add_to(m)
