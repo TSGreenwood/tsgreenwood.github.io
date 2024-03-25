@@ -2,7 +2,7 @@ import folium
 from folium import plugins
 
 def create_kc_map(location=[47.608013, -122.335167], 
-                  zoom_start=12, max_zoom=25, min_zoom=10
+                  zoom_start=12, max_zoom=25, min_zoom=10,
                   min_lat=47.0, max_lat=48.0, 
                   min_lon=-123.0, max_lon=-121.0):
     m = folium.Map(location=location, zoom_start=zoom_start, max_zoom=max_zoom, min_zoom=min_zoom,
